@@ -22,6 +22,7 @@ public class PlayerControler : MonoBehaviour
         {
             tree.CutTree();
         }
+       
       
     }
 

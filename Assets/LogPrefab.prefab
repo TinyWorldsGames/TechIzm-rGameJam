@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc583d980d4084e4fb69bb0c570c6959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationName: hasLog

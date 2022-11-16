@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CollactableLog : MonoBehaviour
 {
-   
+    [SerializeField] string animationName;
+
    public void Collect(PlayerControler controler)
     {
-        controler._animator.SetBool("hasLog", true);
+        controler._animator.SetBool(animationName, true);
         Destroy(gameObject);
     }
 }
