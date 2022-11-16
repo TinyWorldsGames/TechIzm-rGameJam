@@ -11,6 +11,7 @@ public class PlayerControler : MonoBehaviour
     LogPrecessing logPrecessing;
     WorkArea workArea;
     ClockTower clockTower;
+    Efes efes;
 
     public GameObject plusStone,particularEffect, stoneColunm;
 
@@ -40,6 +41,13 @@ public class PlayerControler : MonoBehaviour
         _animator.SetBool("isWorkArea", false);
     }
 
+    public void ClearEfes()
+    {
+        efes.clearedPart++;
+        efes.GetComponent<SpriteRenderer>().sprite = efes.sprites[efes.clearedPart];
+        _animator.SetBool("isWorkEfes", false);
+    }
+
 
     public void ClockTowerDoor()
     {
@@ -51,6 +59,7 @@ public class PlayerControler : MonoBehaviour
         {
             clockTower.logPoints[i].SetActive(false);
         }
+        clockTower.GetComponent<SpriteRenderer>().sprite = clockTower.clockTowerWithGate;
     }
 
 
@@ -110,6 +119,19 @@ public class PlayerControler : MonoBehaviour
            
 
         }
+
+
+        if (collision.GetComponent<Efes>() != null)
+        {
+            efes = collision.GetComponent<Efes>();
+
+            _animator.SetBool("isWorkEfes", true);
+
+
+        }
+
+
+
 
         if (collision.GetComponent<ClockTower>() != null)
         {
