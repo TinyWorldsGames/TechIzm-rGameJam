@@ -115,9 +115,9 @@ TextureImporter:
       name: CaryColunmUp_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 9
         y: 40
-        width: 12
+        width: 14
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -136,9 +136,9 @@ TextureImporter:
       name: CaryColunmUp_1
       rect:
         serializedVersion: 2
-        x: 42
+        x: 41
         y: 40
-        width: 12
+        width: 14
         height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -157,9 +157,9 @@ TextureImporter:
       name: CaryColunmUp_2
       rect:
         serializedVersion: 2
-        x: 10
+        x: 9
         y: 8
-        width: 12
+        width: 14
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
