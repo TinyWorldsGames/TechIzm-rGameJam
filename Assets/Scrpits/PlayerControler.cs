@@ -36,6 +36,7 @@ public class PlayerControler : MonoBehaviour
     {
         workArea.insertColunm();
         _animator.SetBool("hasColunm", false);
+        _animator.SetBool("isWorkArea", false);
     }
 
 
