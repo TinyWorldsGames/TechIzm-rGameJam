@@ -10,6 +10,7 @@ public class PlayerControler : MonoBehaviour
     Tree tree;
     LogPrecessing logPrecessing;
     WorkArea workArea;
+    ClockTower clockTower;
 
     public GameObject plusStone,particularEffect, stoneColunm;
 
@@ -38,6 +39,20 @@ public class PlayerControler : MonoBehaviour
         _animator.SetBool("hasColunm", false);
         _animator.SetBool("isWorkArea", false);
     }
+
+
+    public void ClockTowerDoor()
+    {
+
+
+        _animator.SetBool("isClockTowerWork", false);
+
+        for (int i = 0; i < clockTower.logPoints.Length; i++)
+        {
+            clockTower.logPoints[i].SetActive(false);
+        }
+    }
+
 
 
     public void CutTree()
@@ -96,6 +111,22 @@ public class PlayerControler : MonoBehaviour
 
         }
 
+        if (collision.GetComponent<ClockTower>() != null)
+        {
+            if (collision.GetComponent<ClockTower>().totalLog < 4)
+            {
+                collision.GetComponent<ClockTower>().logPoints[(collision.GetComponent<ClockTower>().totalLog)].SetActive(true);
+                collision.GetComponent<ClockTower>().totalLog++;
+                _animator.SetBool("hasLog", false);
+                clockTower = collision.GetComponent<ClockTower>();
+            }
+
+            if (collision.GetComponent<ClockTower>().totalLog >= 4)
+            {
+                _animator.SetBool("isClockTowerWork", true);
+            }
+
+        }
 
 
 
