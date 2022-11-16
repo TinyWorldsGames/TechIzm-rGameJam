@@ -38,12 +38,22 @@ public class PlayerControler : MonoBehaviour
 
         if (collision.GetComponent<CollactableLog>() != null)
         {
-            if (!_animator.GetBool("hasLog")|| _animator.GetBool("hasColunm"))
+            if (!_animator.GetBool("hasLog")|| !_animator.GetBool("hasColunm"))
             {
                 collision.GetComponent<CollactableLog>().Collect(this);
             }
            
         }
+
+        if (collision.GetComponent<StoneProcessing>()!=null)
+        {
+            if ( _animator.GetBool("hasColunm"))
+            {
+                collision.GetComponent<CollactableLog>().Collect(this);
+            }
+        }
+
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
